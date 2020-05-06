@@ -18,11 +18,12 @@ public class FirstActivity extends Activity {
     private static final String TAG = "FirstActivity";
 
 
-    ServiceWorker serviceWorker1 = new ServiceWorker();
-    ServiceWorker serviceWorker2 = new ServiceWorker();
-
-    Button button1, button2;
-    ImageView imageView1, imageView2;
+    private ServiceWorker serviceWorker1 = new ServiceWorker();
+    private ServiceWorker serviceWorker2 = new ServiceWorker();
+    private Button button1, button2;
+    private ImageView imageView1, imageView2;
+    public static final String IMAGE_1 = "https://teja8.kuikr.com/images/Badges-Assets/others/ic_email_verified.png";
+    public static final String IMAGE_2 = "https://teja8.kuikr.com/images/Badges-Assets/Cars/ic_cars_gold.png";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,9 +49,6 @@ public class FirstActivity extends Activity {
 
 
     }
-
-    public static final String IMAGE_1 = "https://teja8.kuikr.com/images/Badges-Assets/others/ic_email_verified.png";
-    public static final String IMAGE_2 = "https://teja8.kuikr.com/images/Badges-Assets/Cars/ic_cars_gold.png";
 
     private void fetchImage1AndSet() {
         serviceWorker1.addTask(new Task<Bitmap>() {

@@ -8,8 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-
-
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
@@ -27,7 +25,7 @@ public class FirstActivity  extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.content_main);
         button1 = findViewById(R.id.button1);
         button2 = findViewById(R.id.button2);
         imageView1 = findViewById(R.id.imageView1);
@@ -69,8 +67,9 @@ public class FirstActivity  extends Activity {
 
             @Override
             public void onTaskComplete(Bitmap result) {
-                //Set bitmap to imageview
-                imageView1.setImageBitmap(result);
+                if (result != null) {
+                    imageView1.setImageBitmap(result);
+                }
             }
         });
     }
@@ -92,7 +91,9 @@ public class FirstActivity  extends Activity {
 
             @Override
             public void onTaskComplete(Bitmap result) {
-                imageView2.setImageBitmap(result);
+                if (result != null) {
+                    imageView2.setImageBitmap(result);
+                }
             }
         });
     }
